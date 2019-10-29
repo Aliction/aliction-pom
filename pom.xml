@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.aliction</groupId>
   <artifactId>aliction-pom</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.1</version>
   <packaging>pom</packaging>
   <name>Aliction Pom</name>
   <description>Parent Pom to Aliction Java projects</description>
@@ -11,7 +11,7 @@
     <connection>scm:git:https://github.com/Aliction/aliction-pom.git</connection>
     <developerConnection>scm:git:https://github.com/Aliction/aliction-pom.git</developerConnection>
     <url>https://github.com/aliction/aliction-pom</url>
-    <tag>HEAD</tag>
+    <tag>1.0.1</tag>
   </scm>
 
   <developers>
@@ -44,11 +44,20 @@
 
   <properties>
     <nexus.staging.version>1.6.8</nexus.staging.version>
-    <nexus.release.version>2.5.3</nexus.release.version>
+    <maven.release.version>2.5.3</maven.release.version>
     <maven.source.version>3.1.0</maven.source.version>
     <maven.javadoc.version>3.1.1</maven.javadoc.version>
     <maven.gpg.version>1.6</maven.gpg.version>
   </properties>
+
+  <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>4.5</version>
+    </dependency>
+  </dependencies>
 
   <build>
     <plugins>
@@ -66,7 +75,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-release-plugin</artifactId>
-        <version>2.5.3</version>
+        <version>${maven.release.version}</version>
         <configuration>
           <checkModificationExcludes>
             <checkModificationExclude>pom.xml</checkModificationExclude>
@@ -122,6 +131,13 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
             <version>${maven.gpg.version}</version>
+            <dependencies>
+              <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>4.5.3</version>
+              </dependency>
+            </dependencies>
             <executions>
               <execution>
                 <id>sign-artifacts</id>
