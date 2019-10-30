@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.aliction</groupId>
   <artifactId>aliction-pom</artifactId>
-  <version>1.0.2-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>pom</packaging>
   <name>Aliction Pom</name>
   <description>Parent Pom to Aliction Java projects</description>
@@ -11,7 +11,7 @@
     <connection>scm:git:https://github.com/Aliction/aliction-pom.git</connection>
     <developerConnection>scm:git:https://github.com/Aliction/aliction-pom.git</developerConnection>
     <url>https://github.com/aliction/aliction-pom</url>
-    <tag>HEAD</tag>
+    <tag>1.0.0</tag>
   </scm>
 
   <developers>
@@ -49,15 +49,6 @@
     <maven.javadoc.version>3.1.1</maven.javadoc.version>
     <maven.gpg.version>1.6</maven.gpg.version>
   </properties>
-
-  <dependencies>
-    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
-    <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpclient</artifactId>
-      <version>4.5</version>
-    </dependency>
-  </dependencies>
 
   <build>
     <plugins>
@@ -135,7 +126,7 @@
               <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
-                <version>4.5.3</version>
+                <version>4.5.10</version>
               </dependency>
             </dependencies>
             <executions>
