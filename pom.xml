@@ -2,18 +2,18 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.aliction</groupId>
   <artifactId>aliction-pom</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.1.0</version>
   <packaging>pom</packaging>
   <name>Aliction Pom</name>
   <description>Parent Pom to Aliction Java projects</description>
-  
+
   <url>https://github.com/aliction/aliction-pom</url>
 
   <scm>
     <connection>scm:git:https://github.com/Aliction/aliction-pom.git</connection>
     <developerConnection>scm:git:https://github.com/Aliction/aliction-pom.git</developerConnection>
     <url>https://github.com/aliction/aliction-pom</url>
-    <tag>HEAD</tag>
+    <tag>1.1.0</tag>
   </scm>
 
   <developers>
@@ -47,8 +47,9 @@
   <properties>
     <nexus.staging.version>1.6.8</nexus.staging.version>
     <maven.release.version>2.5.3</maven.release.version>
-    <maven.source.version>3.1.0</maven.source.version>
+    <maven.source.version>3.6.2</maven.source.version>
     <maven.javadoc.version>3.1.1</maven.javadoc.version>
+    <maven.testing.version>3.0.0-M3</maven.testing.version>
     <maven.gpg.version>1.6</maven.gpg.version>
   </properties>
 
@@ -79,6 +80,16 @@
           <releaseProfiles>release</releaseProfiles>
           <goals>deploy</goals>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven.testing.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>${maven.testing.version}</version>
       </plugin>
     </plugins>
   </build>
